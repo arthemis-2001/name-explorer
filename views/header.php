@@ -1,7 +1,5 @@
 <?php
-
 $alphabet = gen_alphabet();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +16,7 @@ $alphabet = gen_alphabet();
         <p>Explore and find names</p>
         <nav>
             <?php foreach ($alphabet as $char): ?>
-                <a href="index.php?char=<?= http_build_query(['char' => $char]); ?>">
+                <a href="index.php?<?= http_build_query(['char' => $char]); ?>">
                     <?= escape($char); ?>
                 </a>
             <?php endforeach; ?>
