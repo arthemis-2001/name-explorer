@@ -1,3 +1,8 @@
+<?php
+
+$alphabet = gen_alphabet();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,5 +16,12 @@
     <header>
         <h1>Name explorer</h1>
         <p>Explore and find names</p>
+        <nav>
+            <?php foreach ($alphabet as $char): ?>
+                <a href="index.php?char=<?= http_build_query(['char' => $char]); ?>">
+                    <?= escape($char); ?>
+                </a>
+            <?php endforeach; ?>
+        </nav>
     </header>
     <main>
