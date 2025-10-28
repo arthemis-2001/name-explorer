@@ -10,4 +10,4 @@ if (empty($name)) {
 
 $entries = fetch_name_entries($name);
 
-render('name.view', ['name' => $name, 'entries' => $entries]);
+render('name.view', ['name' => $name, 'char' => $name[0], 'entries' => $entries]);

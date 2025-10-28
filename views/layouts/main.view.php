@@ -14,9 +14,10 @@
         </h1>
         <p>Explore and find names</p>
         <nav>
-            <?php foreach ($alphabet as $char): ?>
-                <a href="char.php?<?= http_build_query(['char' => $char]); ?>">
-                    <?= escape($char); ?>
+            <?php foreach ($alphabet as $letter): ?>
+                <a href="char.php?<?= http_build_query(['char' => $letter]); ?>" 
+                    <?php if (!empty($char) && $letter === $char): ?> class="active" <?php endif; ?>>
+                    <?= escape($letter); ?>
                 </a>
             <?php endforeach; ?>
         </nav>
